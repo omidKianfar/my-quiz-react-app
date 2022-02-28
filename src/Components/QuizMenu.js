@@ -2,9 +2,17 @@ import React, { useState } from "react";
 
 import { Questions } from "./QuestionList";
 
-const QuizMenu = () => {
+const QuizMenu = ({ score, setScore }) => {
+  // state ---------------------------------------------------------
   const [question, setQuestion] = useState(0);
   const [chosenAnswer, setchosenAnswer] = useState("");
+  // func ---------------------------------------------------------
+  const nextQuestion = () => {
+    if (Questions[question].answer == chosenAnswer) {
+      setScore(score + 1);
+    }
+    setQuestion(question + 1);
+  };
 
   return (
     <div>
@@ -52,6 +60,7 @@ const QuizMenu = () => {
           <label htmlFor="optionD">{Questions[question].optionD}</label>
         </div>
       </div>
+      <button onClick={nextQuestion}>Next Question</button>
     </div>
   );
 };
