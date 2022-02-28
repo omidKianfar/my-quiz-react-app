@@ -1,11 +1,18 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { QuizContext } from "../Hooks/Context";
 
-const MainMenu = ({ setGame }) => {
+const MainMenu = () => {
   return (
-    <div>
-      <h1>Quiz App Menu</h1>
-      <button onClick={() => setGame("quiz")}>Start Game</button>
-    </div>
+    <QuizContext.Consumer>
+      {({ setGame }) => {
+        return (
+          <Fragment>
+            <h1>Quiz App Menu</h1>
+            <button onClick={() => setGame("quiz")}>Start Game</button>
+          </Fragment>
+        );
+      }}
+    </QuizContext.Consumer>
   );
 };
 export default MainMenu;

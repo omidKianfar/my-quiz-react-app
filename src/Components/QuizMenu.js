@@ -1,18 +1,21 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
+import { QuizContext } from "../Hooks/Context";
 
 import { QuestionList } from "./QuestionList";
 
-const QuizMenu = ({
-  setGame,
-  question,
-  setQuestion,
-  score,
-  setScore,
-  chosenAnswer,
-  setchosenAnswer,
-  answers,
-  setAnswers,
-}) => {
+const QuizMenu = () => {
+  const {
+    setGame,
+    question,
+    setQuestion,
+    score,
+    setScore,
+    chosenAnswer,
+    setchosenAnswer,
+    answers,
+    setAnswers,
+  } = useContext(QuizContext);
+
   // func ---------------------------------------------------------
   const setAnswerScore = () => {
     if (QuestionList[question].answer === chosenAnswer) {
