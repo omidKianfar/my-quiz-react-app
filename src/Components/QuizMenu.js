@@ -1,67 +1,92 @@
-import React, { useState } from "react";
+import React, { Fragment } from "react";
 
-import { Questions } from "./QuestionList";
+import { QuestionList } from "./QuestionList";
 
-const QuizMenu = ({ score, setScore }) => {
-  // state ---------------------------------------------------------
-  const [question, setQuestion] = useState(0);
-  const [chosenAnswer, setchosenAnswer] = useState("");
+const QuizMenu = ({
+  setGame,
+  question,
+  setQuestion,
+  score,
+  setScore,
+  chosenAnswer,
+  setchosenAnswer,
+  answers,
+  setAnswers,
+}) => {
   // func ---------------------------------------------------------
-  const nextQuestion = () => {
-    if (Questions[question].answer == chosenAnswer) {
+  const setAnswerScore = () => {
+    if (QuestionList[question].answer === chosenAnswer) {
       setScore(score + 1);
     }
+    AnswersHndeler();
+  };
+
+  const AnswersHndeler = () => {
+    setAnswers([...answers, chosenAnswer]);
+  };
+
+  const nextQuestion = () => {
+    setAnswerScore();
     setQuestion(question + 1);
   };
 
+  const finishQuestion = () => {
+    setAnswerScore();
+    setGame("endPage");
+  };
+
   return (
-    <div>
+    <Fragment>
       <h1>Java ScriptQuiz</h1>
-      <h4>{Questions[question].question}</h4>
+      <h4>{QuestionList[question].question}</h4>
       <div>
         <div>
           <input
             name="answer"
             id="optionA"
             type="radio"
-            value={Questions[question].optionA}
+            value={QuestionList[question].optionA}
             onChange={() => setchosenAnswer("A")}
           />
-          <label htmlFor="optionA">{Questions[question].optionA}</label>
+          <label htmlFor="optionA">{QuestionList[question].optionA}</label>
         </div>
         <div>
           <input
             name="answer"
             id="optionB"
             type="radio"
-            value={Questions[question].optionB}
+            value={QuestionList[question].optionB}
             onChange={() => setchosenAnswer("B")}
           />
-          <label htmlFor="optionB">{Questions[question].optionB}</label>
+          <label htmlFor="optionB">{QuestionList[question].optionB}</label>
         </div>
         <div>
           <input
             name="answer"
             id="optionC"
             type="radio"
-            value={Questions[question].optionC}
+            value={QuestionList[question].optionC}
             onChange={() => setchosenAnswer("C")}
           />
-          <label htmlFor="optionC">{Questions[question].optionC}</label>
+          <label htmlFor="optionC">{QuestionList[question].optionC}</label>
         </div>
         <div>
           <input
             name="answer"
             id="optionD"
             type="radio"
-            value={Questions[question].optionD}
+            value={QuestionList[question].optionD}
             onChange={() => setchosenAnswer("D")}
           />
-          <label htmlFor="optionD">{Questions[question].optionD}</label>
+          <label htmlFor="optionD">{QuestionList[question].optionD}</label>
         </div>
       </div>
-      <button onClick={nextQuestion}>Next Question</button>
-    </div>
+      {question == QuestionList.length - 1 ? (
+        <button onClick={finishQuestion}>Finish</button>
+      ) : (
+        <button onClick={nextQuestion}>Next Question</button>
+      )}
+    </Fragment>
   );
 };
 
