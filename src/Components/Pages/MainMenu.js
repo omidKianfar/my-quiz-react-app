@@ -1,5 +1,6 @@
-import React, { Fragment } from "react";
-import { QuizContext } from "../Hooks/Context";
+import { Fragment } from "react";
+
+import QuizContext from "../../Hooks/Context";
 
 const MainMenu = () => {
   return (

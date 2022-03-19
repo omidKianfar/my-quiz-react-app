@@ -1,4 +1,4 @@
-export const QuestionList = [
+const QuestionList = [
   {
     question: "1: Inside which HTML element do we put the JavaScript?",
     optionA: "<javascript>",
@@ -100,3 +100,5 @@ export const QuestionList = [
     answer: "B",
   },
 ];
+
+export default QuestionList;

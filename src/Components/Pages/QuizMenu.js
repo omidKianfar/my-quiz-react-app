@@ -1,42 +1,13 @@
-import React, { Fragment, useContext } from "react";
-import { QuizContext } from "../Hooks/Context";
+import { Fragment, useContext } from "react";
 
-import { QuestionList } from "./QuestionList";
+import QuizContext from "../../Hooks/Context";
+
+import { finishQuestions } from "../../Tools/FinishQuestions";
+import { nextQuestion } from "../../Tools/NextQuestion";
 
 const QuizMenu = () => {
-  const {
-    setGame,
-    question,
-    setQuestion,
-    score,
-    setScore,
-    chosenAnswer,
-    setchosenAnswer,
-    answers,
-    setAnswers,
-  } = useContext(QuizContext);
-
-  // func ---------------------------------------------------------
-  const setAnswerScore = () => {
-    if (QuestionList[question].answer === chosenAnswer) {
-      setScore(score + 1);
-    }
-    AnswersHndeler();
-  };
-
-  const AnswersHndeler = () => {
-    setAnswers([...answers, chosenAnswer]);
-  };
-
-  const nextQuestion = () => {
-    setAnswerScore();
-    setQuestion(question + 1);
-  };
-
-  const finishQuestion = () => {
-    setAnswerScore();
-    setGame("endPage");
-  };
+  const contextProps = useContext(QuizContext);
+  const { QuestionList, question, setchosenAnswer } = contextProps;
 
   return (
     <Fragment>
@@ -85,9 +56,11 @@ const QuizMenu = () => {
         </div>
       </div>
       {question == QuestionList.length - 1 ? (
-        <button onClick={finishQuestion}>Finish</button>
+        <button onClick={() => finishQuestions(contextProps)}>Finish</button>
       ) : (
-        <button onClick={nextQuestion}>Next Question</button>
+        <button onClick={() => nextQuestion(contextProps)}>
+          Next Question
+        </button>
       )}
     </Fragment>
   );

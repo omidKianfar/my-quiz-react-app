@@ -1,29 +1,13 @@
-import React, { Fragment, useState } from "react";
+import { Fragment, useContext } from "react";
 
-import { QuestionList } from "./QuestionList";
+import QuizContext from "../../Hooks/Context";
 
-const EndPage = ({
-  score,
-  setQuestion,
-  setScore,
-  setGame,
-  answers,
-  setAnswers,
-}) => {
-  // stet -------------------------------------------------------
-  const [show, setShow] = useState(false);
+import { showAnswers } from "../../Tools/ShowAnswers";
+import { resetQuiz } from "../../Tools/ResetQuiz";
 
-  // func -------------------------------------------------------
-  const resetQuiz = () => {
-    setScore(0);
-    setQuestion(0);
-    setGame("menu");
-    setAnswers([]);
-  };
-
-  const setShowHandler = () => {
-    setShow(!show);
-  };
+const EndPage = () => {
+  const contetxProps = useContext(QuizContext);
+  const { score, answers, QuestionList, show } = contetxProps;
 
   return (
     <Fragment>
@@ -32,8 +16,10 @@ const EndPage = ({
         <h4>
           Your Score: ( {score} / {QuestionList.length} )
         </h4>
-        <button onClick={resetQuiz}>Reset Quiz</button>
-        <button onClick={setShowHandler}>Show Questions and Answers</button>
+        <button onClick={() => resetQuiz(contetxProps)}>Reset Quiz</button>
+        <button onClick={() => showAnswers(contetxProps)}>
+          Show Questions and Answers
+        </button>
         <div>
           {show
             ? QuestionList.map((question, index) => (
