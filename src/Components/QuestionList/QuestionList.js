@@ -1,6 +1,6 @@
 const QuestionList = [
   {
-    question: "1: Inside which HTML element do we put the JavaScript?",
+    question: "1. Inside which HTML element do we put the JavaScript?",
     optionA: "<javascript>",
     optionB: "<script>",
     optionC: "<scripting>",
@@ -9,7 +9,7 @@ const QuestionList = [
   },
   {
     question:
-      "2: What is the correct JavaScript syntax to change the content of the HTML element? <p id='demo'>This is a demonstration.</p>",
+      "2. What is the correct JavaScript syntax to change the content of the HTML element? <p id='demo'>This is a demonstration.</p>",
     optionA: "document.getElementById('demo').innerHTML = 'Hello World';",
     optionB: "document.getElementsByName('p').innerHTML = 'Hello World';",
     optionC: "#demo.innerHTML = 'Hello World';",
@@ -18,7 +18,7 @@ const QuestionList = [
   },
   {
     question:
-      "3: Which of the following is true about typeof operator in JavaScript?",
+      "3. Which of the following is true about typeof operator in JavaScript?",
     optionA:
       "The typeof is a unary operator that is placed before its single operand, which can be of any type.",
     optionB: "value is a string indicating the data type of the operand.",
@@ -28,7 +28,7 @@ const QuestionList = [
   },
   {
     question:
-      "4: Which built-in method returns the character at the specified index?",
+      "4. Which built-in method returns the character at the specified index?",
     optionA: "characterAt()",
     optionB: "getCharAt()",
     optionC: "charAt()",
@@ -38,7 +38,7 @@ const QuestionList = [
 
   {
     question:
-      "5: Which of the following function of Number object forces a number to display in exponential notation?",
+      "5. Which of the following function of Number object forces a number to display in exponential notation?",
     optionA: "toExponential()",
     optionB: "toFixed()",
     optionC: "toPrecision()",
@@ -47,7 +47,7 @@ const QuestionList = [
   },
   {
     question:
-      "6: Which of the following function of Boolean object returns a string containing the source of the Boolean object?",
+      "6. Which of the following function of Boolean object returns a string containing the source of the Boolean object?",
     optionA: "toSource()",
     optionB: "valueOf()",
     optionC: "toString()",
@@ -56,7 +56,7 @@ const QuestionList = [
   },
   {
     question:
-      "7: Which of the following function of String object executes the search for a match between a regular expression and a specified string?",
+      "7. Which of the following function of String object executes the search for a match between a regular expression and a specified string?",
     optionA: "concat()",
     optionB: "match()",
     optionC: "replace()",
@@ -65,7 +65,7 @@ const QuestionList = [
   },
   {
     question:
-      "8: Which of the following function of String object returns the calling string value converted to lower case while respecting the current locale?",
+      "8. Which of the following function of String object returns the calling string value converted to lower case while respecting the current locale?",
     optionA: "toLocaleLowerCase()",
     optionB: "toLowerCase()",
     optionC: "toString()",
@@ -74,7 +74,7 @@ const QuestionList = [
   },
   {
     question:
-      "9: Which of the following function of String object causes a string to be displayed as a superscript, as if it were in a <sup> tag?",
+      "9. Which of the following function of String object causes a string to be displayed as a superscript, as if it were in a <sup> tag?",
     optionA: "sup()",
     optionB: "small()",
     optionC: "strike()",
@@ -83,7 +83,7 @@ const QuestionList = [
   },
   {
     question:
-      "10: Which of the following function of Array object creates a new array with the results of calling a provided function on every element in this array?",
+      "10. Which of the following function of Array object creates a new array with the results of calling a provided function on every element in this array?",
     optionA: "push()",
     optionB: "join()",
     optionC: "pop()",
@@ -92,7 +92,7 @@ const QuestionList = [
   },
   {
     question:
-      "11: Which of the following function of Array object adds one or more elements to the front of an array and returns the new length of the array?",
+      "11. Which of the following function of Array object adds one or more elements to the front of an array and returns the new length of the array?",
     optionA: "sort()",
     optionB: "unshift()",
     optionC: "splice()",
