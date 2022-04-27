@@ -4,10 +4,12 @@ export const resetQuiz = ({
   setGame,
   setAnswers,
   setShow,
+  setchosenAnswer,
 }) => {
   setScore(0);
   setQuestion(0);
   setGame("menu");
   setAnswers([]);
   setShow(false);
+  setchosenAnswer("");
 };
