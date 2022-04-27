@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import QuizContext from "../../Hooks/Context";
 import QuestionList from "../QuestionList/QuestionList";
-import Navbar from "./Navbar";
+import NavbarMenu from "./Navbar/Navbar";
 
 function Layout() {
   // state -------------------------------------------------
@@ -31,7 +31,7 @@ function Layout() {
         QuestionList,
       }}
     >
-      <Navbar />
+      <NavbarMenu />
     </QuizContext.Provider>
   );
 }
