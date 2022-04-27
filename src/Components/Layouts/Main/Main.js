@@ -1,10 +1,10 @@
-import { useContext } from "react";
+import { Fragment, useContext } from "react";
 
-import QuizContext from "../../Hooks/Context";
+import QuizContext from "../../../Hooks/Context";
 
-import MainMenu from "../Pages/MainMenu";
-import QuizMenu from "../Pages/QuizMenu";
-import EndPage from "../Pages/EndPage";
+import MainMenu from "../../Pages/MainMenu/MainMenu";
+import QuizMenu from "../../Pages/QuizMenu/QuizMenu";
+import EndPage from "../../Pages/EndPage/EndPage";
 
 const Main = () => {
   const { game } = useContext(QuizContext);
@@ -22,7 +22,7 @@ const Main = () => {
       break;
   }
 
-  return <div>{setPage}</div>;
+  return <Fragment>{setPage}</Fragment>;
 };
 
 export default Main;
