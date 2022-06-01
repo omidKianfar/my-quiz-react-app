@@ -9,6 +9,7 @@ import EndPage from "../../Pages/EndPage/EndPage";
 const Main = () => {
   const { game } = useContext(QuizContext);
 
+  // Change pages
   let setPage = null;
   switch (game) {
     case "menu":

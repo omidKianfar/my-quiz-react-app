@@ -15,16 +15,19 @@ const QuizMenu = () => {
   const { QuestionList, question, chosenAnswer, setchosenAnswer } =
     contextProps;
 
+  // Bootstrap classes
   const headClass = [`text-center p-3 fw-bold rounded shadow`];
   const colButtonClass = [`d-flex justify-content-center`];
   const buttonClass = [`w-50 mt-3 shadow`];
 
   return (
     <main className={`${Styles.menu}  p-4`}>
+      {/* Question */}
       <h6 className={`${headClass} mb-4 bg-info`}>
         {QuestionList[question].question}
       </h6>
 
+      {/* Answers */}
       <Container>
         <Row>
           <Col sm={12} md={6}>

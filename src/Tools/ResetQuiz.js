@@ -1,3 +1,4 @@
+// Reset answrs and quiz to main menu page
 export const resetQuiz = ({
   setQuestion,
   setScore,

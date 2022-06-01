@@ -5,6 +5,7 @@ import { Container, Row, Button } from "react-bootstrap";
 import QuizContext from "../../../Hooks/Context";
 
 const MainMenu = () => {
+  // Bootstrap classes
   const boxClass = [`text-center p-3 fw-bold rounded shadow`];
   const RowClass = [`bg-info border border-3 border-dark`];
   const buttonClass = [`w-50 mx-auto shadow`];
