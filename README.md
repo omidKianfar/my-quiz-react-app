@@ -8,17 +8,16 @@ Java Script Quiz App make with react.js
   1. HTML5
   2. CSS Module
   3. Flexbox
-  4. React-bootstrap
-  5. Json
-  6. ES6
-  7. React
+  4. ES6
+  5. React
       1. Jsx
       2. Event handler
       3. Fragment 
       4. Ref
       5. Hooks
       6. Context API
-  8. React router
+  6. React router
+  7. React-bootstrap
 # Install
   1. Clone project
   
